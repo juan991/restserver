@@ -7,6 +7,7 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
+        // Paths de las rutas
         this.usuariosPath = '/api/usuarios' 
         // Middlewares
         this.middlewares();
@@ -14,7 +15,7 @@ class Server {
         this.routes();
     }
 
-    middlewares(){
+    middlewares() {
         this.app.use( cors() );
         // Directorio público
         this.app.use( express.static('public') );
